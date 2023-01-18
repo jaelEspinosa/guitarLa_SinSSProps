@@ -1,0 +1,274 @@
+.header{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .8), rgb(0 0 0 / .7)), url('../public/img/header.jpg');
+    padding: 5rem 0;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+}
+
+.barra{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media(min-width:768px){
+    .barra{
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-evenly;
+    }
+}
+
+.navegacion{
+    
+    margin: 5rem 2rem 0 2rem;
+    display: flex;
+    gap:1rem;
+}
+@media (min-width: 768px){
+    .navegacion{
+        margin-top: 0;
+    }
+    .navegacion a{
+       font-size:1.8rem;
+    }
+}
+.navegacion a{
+    color: var(--blanco);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    padding:2px 5px;
+    position: relative;
+    z-index: 1;    
+}
+@media (min-width: 768px){
+    
+    .navegacion a{
+       font-size:1.5rem;
+    }
+}
+.navegacion a:hover{
+    background-color: var(--primary);
+    border-radius: 5px;    
+    box-shadow: 2px 2px 4px gray;
+    transition: all .4s;
+}
+
+
+.modelo{
+    color: var(--blanco);
+    margin-top: 5rem;
+    text-align: center;
+    animation-name: mostrarModelo;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@media(min-width:768px){
+    .modelo{
+        text-align: left;
+        width: 50%;
+    }
+}
+.modelo h2{
+    font-size: 5rem;
+
+}
+
+.modelo p:first-of-type{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 1.6rem;
+    
+    
+}
+.precio{
+    font-size: 5rem;
+    color: var(--primary);
+    font-weight: bolder;
+    line-height: 0;
+}
+.enlace{
+    margin-top: 2rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--blanco);
+    border: 2px solid var(--primary);
+    padding: 1rem 5rem;
+    transition: all 1s;
+}
+.enlace:hover{
+    background-color: var(--primary);
+    color: white;
+    transition: all 0.5s;
+}
+.guitarra{
+    display: none;
+
+}
+@media(min-width:992px){
+    .guitarra{
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom:-8px;
+      animation-name: mostrarImagen;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+    }
+}
+@keyframes mostrarImagen {
+    0%{
+      right: 100px;
+      opacity: 0;
+      transform: scale(50%);
+
+    }
+    60%{
+      opacity: 0;  
+    }
+    100%{
+      right: 0;
+      opacity: 1;
+      transform: scale(100%);
+
+    }
+}
+@keyframes mostrarLogo {
+    0%{
+     opacity: 0;
+     transform:scale(0%)
+    }
+
+    
+
+    100%{    
+     opacity: 1;
+     transform:scale(100%);
+    }
+}
+@keyframes mostrarModelo {
+    0%{
+     opacity: 0;
+     
+    }
+
+    
+
+    100%{    
+     opacity: 1;
+    
+    }
+}
+.logo{
+    
+    animation-name: mostrarLogo;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+.carritoLleno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding:2px;
+    position: absolute;
+    color:var(--blanco);
+    background-color: brown;
+    border-radius: 20px;
+    top:-7px;
+    right: -7px;
+}
+.buscador{
+    display: flex;
+    gap: 1rem;
+    margin-top:3rem;
+    position: relative;
+   
+       
+
+}
+.buscador input{
+    border: none;
+    border-bottom: 2px solid white;
+    color:white;
+    background-color: transparent;
+}
+.buscador input:focus{
+    outline: none;
+}
+
+.busquedaok{
+    position: absolute;
+    z-index: 2;
+    animation-name: busqueda;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    width: 95vw;
+    max-width: 351px;
+    height: 50vh;
+    max-height: 301px;
+    background-color: rgba(68, 46, 17, 0.863);    
+    top: 35px;
+    left: -30px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 10px 10px 12px gray;
+}
+@media(min-width:768px){
+    .busquedaok{
+        width: 40vw;
+        max-width: 351px;
+        height: 70vh;
+        max-height: 450px;
+        animation-name: busqueda-media;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+
+    }
+    @keyframes busqueda-media {
+        0%{
+            width: 10vw;
+            height: 20vh;
+            background-color: transparent;
+        }
+        50%{
+            
+            background-color: rgba(68, 46, 17, 0.514); ; 
+        
+        }
+        100%{
+            width: 40vw;
+            height: 50vh;
+            background-color:rgba(68, 46, 17, 0.863); ;  
+        }
+    }
+}
+
+@keyframes busqueda {
+    0%{
+        width: 10vw;
+        height: 20vh;
+        background-color: transparent;
+    }
+    50%{
+        
+        background-color: rgba(68, 46, 17, 0.493); 
+    
+    }
+    100%{
+        width: 95vw;
+        height: 50vh;
+        background-color:rgba(68, 46, 17, 0.863);
+    }
+}
