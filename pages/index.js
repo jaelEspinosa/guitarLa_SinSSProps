@@ -17,7 +17,7 @@ const router = useRouter()
 
 useEffect(() => {
  if (router.query.q === 'finalizado'){
-  
+  localStorage.removeItem('carrito')
   setCarrito([])
  }
 
